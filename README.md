@@ -65,3 +65,22 @@ Explanation:
 # Replicate layout
 
 - use VS code extension "Live Sass Compiler" to compile scss into css
+
+  under Styles Folder:
+
+  > style.scss: the overall style of the index.html
+  > variables.scss: extract variables and defined in this file, so it is easy for maintenance and update
+  > mixins.scss: put groups of css properties so that it can reusable in style.scss.
+
+- there are three views here, for large desktop, small desktop, tablet and mobile
+
+`large desktop`: To support more screen resolution, I set a safe content width of 1200px, so it enables most user browser the website correctly。  
+<img src='./screenshoot/large_desktop.png' style='width:1400px'/>
+`small desktop`: on small desktop content will fulfill the screen.
+<img src='./screenshoot/small_desktop.png' style='width:1000px'/>
+`tablet and mobile`: the sidebar will hide automatically, and there will be a button on the right top corner, Click the button will open or close the drawer;
+
+ <div style='display:flex;width:500px;justify-content:space-between'>
+<img src='./screenshoot/tablet_or_mobile.png' style='width:200px'/>
+ 
+ <img src='./screenshoot/tablet_or_mobile_sidebar_open.png' style='width:200px'/></div>
