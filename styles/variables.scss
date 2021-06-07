@@ -4,10 +4,17 @@ $header-height: 4rem;
 $search-box-width: 14rem;
 $sidebar-width: 15rem;
 
-//color
-$bg-header: lightBlue;
-$bg-search-box: #ffffff;
+// color - base
+$white: #ffffff;
+
+//color - background
+$bg-header: #000000;
+$bg-search-box: $white;
 $bg-icon-container: #259b85;
-$color-icon: #ffffff;
-$bg-content: #9face6;
-$bg-sidebar: #d9afd9;
+$bg-content: linear-gradient(180deg, #bfcae2 0%, #ff888271 100%);
+$bg-sidebar: #ff8882e0;
+$color-hover: #ff8982;
+
+// color - font
+$header-font-color: $white;
+$color-icon: $white;

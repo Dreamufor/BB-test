@@ -1,0 +1,21 @@
+@import 'variables';
+
+@mixin inlineAlignElement {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@mixin iconBtnStyle {
+  background: $bg-icon-container;
+  color: $color-icon;
+  &:hover {
+    background: $color-hover;
+  }
+}
+
+@mixin removeInputStyle {
+  border: none;
+  background: none;
+  outline: 0;
+}
