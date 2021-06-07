@@ -49,3 +49,5 @@ Explanation:
 
 - take sales array as parameter, so every function is a pure function
 - for case 3, add case insensitive sort, so it will ignore the character case and always out put the result alphabetically
+
+# Replicate layout
