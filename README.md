@@ -51,3 +51,5 @@ Explanation:
 - for case 3, add case insensitive sort, so it will ignore the character case and always out put the result alphabetically
 
 # Replicate layout
+
+- use VS code extension "Live Sass Compiler" to compile scss into css
