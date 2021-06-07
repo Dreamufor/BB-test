@@ -1,12 +1,11 @@
 * {
   -webkit-box-sizing: border-box;
-  box-sizing: border-box;
+          box-sizing: border-box;
   margin: 0;
 }
 
 body {
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans',
-    'Droid Sans', 'Helvetica Neue', sans-serif;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
   width: 100%;
   max-width: 1200px;
   height: 100vh;
@@ -16,8 +15,8 @@ body {
   display: flex;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
-  -ms-flex-direction: column;
-  flex-direction: column;
+      -ms-flex-direction: column;
+          flex-direction: column;
 }
 
 body header {
@@ -28,11 +27,11 @@ body header {
   display: -ms-flexbox;
   display: flex;
   -webkit-box-pack: justify;
-  -ms-flex-pack: justify;
-  justify-content: space-between;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
   -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
 body header nav {
@@ -50,8 +49,8 @@ body header form {
 
 body header form input {
   -webkit-box-flex: 1;
-  -ms-flex: 1;
-  flex: 1;
+      -ms-flex: 1;
+          flex: 1;
   height: 100%;
   border: none;
   background: none;
@@ -67,11 +66,11 @@ body header form button {
   display: -ms-inline-flexbox;
   display: inline-flex;
   -webkit-box-pack: center;
-  -ms-flex-pack: center;
-  justify-content: center;
+      -ms-flex-pack: center;
+          justify-content: center;
   -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
   background: #259b85;
   color: #ffffff;
 }
@@ -86,16 +85,28 @@ body main {
   display: flex;
   width: 100%;
   -webkit-box-flex: 1;
-  -ms-flex: 1;
-  flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+}
+
+body main input,
+body main label {
+  width: 2rem;
+  height: 2rem;
+  position: absolute;
+  cursor: pointer;
+  top: 0.5rem;
+  right: 0.5rem;
+  visibility: hidden;
 }
 
 body main section {
   height: 100%;
   -webkit-box-flex: 1;
-  -ms-flex: 1;
-  flex: 1;
+      -ms-flex: 1;
+          flex: 1;
   padding: 0.5rem;
+  background: -webkit-gradient(linear, left top, left bottom, from(#bfcae2), to(#ff888271));
   background: linear-gradient(180deg, #bfcae2 0%, #ff888271 100%);
 }
 
@@ -104,5 +115,71 @@ body main aside {
   width: 15rem;
   height: 100%;
   background: #ff8882e0;
+}
+
+@media (max-width: 768px) {
+  body main {
+    position: relative;
+    background: -webkit-gradient(linear, left top, left bottom, from(#bfcae2), to(#ff888271));
+    background: linear-gradient(180deg, #bfcae2 0%, #ff888271 100%);
+  }
+  body main label {
+    z-index: 2;
+    visibility: visible;
+    display: -webkit-inline-box;
+    display: -ms-inline-flexbox;
+    display: inline-flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    background: #259b85;
+    color: #ffffff;
+    transition: 0.3s ease-in-out;
+    /* support transitions in all browser */
+    -webkit-transition: 0.3s ease-in-out;
+    -moz-transition: 0.3s ease-in-out;
+    -o-transition: 0.3s ease-in-out;
+  }
+  body main label:hover {
+    background: #ff8982;
+  }
+  body main aside {
+    position: fixed;
+    top: 4rem;
+    right: -15rem;
+    visibility: hidden;
+    transition: 0.3s ease-in-out;
+    /* support transitions in all browser */
+    -webkit-transition: 0.3s ease-in-out;
+    -moz-transition: 0.3s ease-in-out;
+    -o-transition: 0.3s ease-in-out;
+  }
+  body main section {
+    position: fixed;
+    width: 100%;
+  }
+  body main #sidebar-toggle:checked ~ aside {
+    visibility: visible;
+    right: 0;
+  }
+  body main #sidebar-toggle:checked ~ section {
+    width: calc(100% - 15rem);
+    right: 15rem;
+  }
+  body main #sidebar-toggle:checked ~ label {
+    right: 15.5rem;
+  }
+  body main #sidebar-toggle:checked ~ label .fa-chevron-left {
+    -webkit-transform: rotateY(180deg);
+            transform: rotateY(180deg);
+    transition: 0.3s ease-in-out;
+    /* support transitions in all browser */
+    -webkit-transition: 0.3s ease-in-out;
+    -moz-transition: 0.3s ease-in-out;
+    -o-transition: 0.3s ease-in-out;
+  }
 }
 /*# sourceMappingURL=style.css.map */

@@ -49,6 +49,16 @@ body {
     display: flex;
     width: 100%;
     flex: 1;
+    input,
+    label {
+      width: 2rem;
+      height: 2rem;
+      position: absolute;
+      cursor: pointer;
+      top: 0.5rem;
+      right: 0.5rem;
+      visibility: hidden;
+    }
     section {
       height: 100%;
       flex: 1;
@@ -60,6 +70,51 @@ body {
       width: $sidebar-width;
       height: 100%;
       background: $bg-sidebar;
+    }
+  }
+  @media (max-width: $breakpoint-tablet) {
+    main {
+      position: relative;
+      background: $bg-content;
+
+      label {
+        z-index: 2;
+        visibility: visible;
+        @include inlineAlignElement;
+        @include iconBtnStyle;
+        @include easeInOut300ms;
+      }
+
+      aside {
+        position: fixed;
+        top: $header-height;
+        right: -$sidebar-width;
+        visibility: hidden;
+        @include easeInOut300ms;
+      }
+
+      section {
+        position: fixed;
+        width: 100%;
+      }
+
+      #sidebar-toggle:checked ~ aside {
+        visibility: visible;
+        right: 0;
+      }
+
+      #sidebar-toggle:checked ~ section {
+        width: calc(100% - #{$sidebar-width});
+        right: $sidebar-width;
+      }
+
+      #sidebar-toggle:checked ~ label {
+        right: 0.5rem + $sidebar-width;
+        .fa-chevron-left {
+          transform: rotateY(180deg);
+          @include easeInOut300ms;
+        }
+      }
     }
   }
 }
